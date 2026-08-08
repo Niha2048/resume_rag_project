@@ -1,0 +1,5 @@
+Job Title: DevOps Engineer
+Requirements:
+- Experience with AWS or Azure
+- Docker and Kubernetes knowledge
+- CI/CD pipeline management

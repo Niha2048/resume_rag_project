@@ -1,0 +1,4 @@
+Name: Niveditha Erri
+Skills: AWS, Docker, Kubernetes
+Experience: 2 years
+Education: B.Tech Electronics Communications

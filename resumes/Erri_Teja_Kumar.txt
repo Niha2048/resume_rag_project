@@ -1,0 +1,4 @@
+Name: Erri Teja Kumar
+Skills: Python, SQL, Machine Learning
+Experience: 12 years
+Education: B.Tech Electronics Communications

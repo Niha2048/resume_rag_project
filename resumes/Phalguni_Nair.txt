@@ -1,0 +1,4 @@
+Name: Phalguni Nair
+Skills: Python, SQL, Machine Learning
+Experience: 9 years
+Education: B.Sc Information Technology

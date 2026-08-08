@@ -1,0 +1,4 @@
+Name: Yamuna Naidu
+Skills: React, JavaScript, CSS
+Experience: 9 years
+Education: M.Sc Software Engineering

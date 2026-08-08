@@ -1,0 +1,4 @@
+Name: Bhuvana Reddy
+Skills: C#, .NET, Azure
+Experience: 7 years
+Education: MBA

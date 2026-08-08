@@ -1,0 +1,4 @@
+Name: Naveen gindi
+Skills: C#, .NET, Azure
+Experience: 9 years
+Education: B.Tech Electronics Communications

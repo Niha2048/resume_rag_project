@@ -1,0 +1,4 @@
+Name: Ramina Reddy
+Skills: AWS, Docker, Kubernetes
+Experience: 7 years
+Education: B.Tech Computer Science - Artificial Intelligence

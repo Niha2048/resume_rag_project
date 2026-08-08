@@ -1,0 +1,4 @@
+Name: Koteswar Rao
+Skills: Data Analysis, R, TensorFlow
+Experience: 9 years
+Education: B.Sc Information Technology

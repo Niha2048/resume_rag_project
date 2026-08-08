@@ -1,0 +1,4 @@
+Name: Vydehi nambiar
+Skills: Data Analysis, R, TensorFlow
+Experience: 10 years
+Education: B.Tech Computer Science

@@ -1,0 +1,5 @@
+Job Title: Data Scientist
+Requirements:
+- Expertise in Machine Learning
+- Python, R, and SQL skills
+- Experience with TensorFlow or PyTorch

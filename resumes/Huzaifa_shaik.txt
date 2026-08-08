@@ -1,0 +1,4 @@
+Name: Huzaifa shaik
+Skills: Data Analysis, R, TensorFlow
+Experience: 11 years
+Education: B.Tech Electronics Communications

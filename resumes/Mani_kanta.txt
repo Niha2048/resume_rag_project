@@ -1,0 +1,4 @@
+Name: Mani kanta
+Skills: Java, Spring Boot, Microservices
+Experience: 11 years
+Education: PhD Artificial Intelligence

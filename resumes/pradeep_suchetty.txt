@@ -1,0 +1,4 @@
+Name: pradeep suchetty
+Skills: Java, Spring Boot, Microservices
+Experience: 10 years
+Education: B.Sc Information Technology

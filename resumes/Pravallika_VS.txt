@@ -1,0 +1,4 @@
+Name: Pravallika VS
+Skills: React, JavaScript, CSS
+Experience: 12 years
+Education: B.Tech Electronics Communications

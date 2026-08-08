@@ -1,0 +1,4 @@
+Name: Pavan kumar
+Skills: AWS, Docker, Kubernetes
+Experience: 6 years
+Education: M.Sc Software Engineering

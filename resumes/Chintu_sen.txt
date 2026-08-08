@@ -1,0 +1,4 @@
+Name: Chintu sen
+Skills: Python, SQL, Machine Learning
+Experience: 10 years
+Education: PhD Artificial Intelligence

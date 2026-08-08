@@ -1,0 +1,4 @@
+Name: Gnanesh Elisetty
+Skills: React, JavaScript, CSS
+Experience: 8 years
+Education: M.Tech Data Science

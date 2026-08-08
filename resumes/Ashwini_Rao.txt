@@ -1,0 +1,4 @@
+Name: Ashwini Rao
+Skills: Python, SQL, Machine Learning
+Experience: 5 years
+Education: B.Tech Computer Science
