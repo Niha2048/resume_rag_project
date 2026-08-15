@@ -92,7 +92,6 @@ resume_rag_project/
 - ✅ Dataset: 30+ resumes, 5+ job descriptions  
 - ✅ Scripts: ingestion, matching, analysis  
 - ✅ Performance metrics: latency, precision, recall  
-- ✅ Demo video: 3–4 minutes showing ingestion, matching, and analysis  
 
 ---
 
