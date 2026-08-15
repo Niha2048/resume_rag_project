@@ -1,4 +1,5 @@
 import os, re, chromadb
+import json
 from sentence_transformers import SentenceTransformer
 
 client = chromadb.PersistentClient(path="chroma_db")
@@ -44,7 +45,7 @@ def process_resume(file_path):
     }
     embedding = model.encode(text)
     collection.add(documents=[text], metadatas=[metadata], ids=[name + "_1"])
-    print("Stored:", metadata)
+    print(json.dumps(metadata, indent=2))
 
 if __name__ == "__main__":
     for file in os.listdir("resumes"):

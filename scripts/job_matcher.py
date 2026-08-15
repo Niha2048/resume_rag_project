@@ -1,4 +1,5 @@
 import chromadb
+import json
 from sentence_transformers import SentenceTransformer
 
 client = chromadb.PersistentClient(path="chroma_db")
@@ -29,7 +30,8 @@ def match_job(job_description, must_have_skills=None, min_experience=0):
 if __name__ == "__main__":
     jd = "Backend Developer with 5+ years Python experience, SQL, REST APIs, microservices"
     result = match_job(jd, must_have_skills=["python","sql"], min_experience=5)
-    print(result)
+    print(json.dumps(result, indent=2))
+
 
 
 
