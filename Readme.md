@@ -1,4 +1,3 @@
-```markdown
 # Resume RAG Project – Matching Agent
 
 ##  Learning Objectives
@@ -8,7 +7,7 @@
 - **Enable interactive refinement**: Allow users to adjust requirements mid‑conversation.
 - **Demonstrate advanced screening**: Multi‑round filtering with hire/no‑hire recommendations.
 
----
+
 
 ##  Architecture
 The agent workflow is modeled as a **LangGraph state machine**:
