@@ -1,103 +1,120 @@
-# 📄 Resume RAG Project
+```markdown
+# Resume RAG Project – Matching Agent
 
-## 🔹 Overview
-This project implements a **Retrieval-Augmented Generation (RAG) system** for **resume–job description matching**. It leverages document chunking, embeddings, and vector databases to enable **semantic search** and hybrid filtering.
-
----
-
-## 🔹 Learning Objectives
-- **Document chunking** and embedding  
-- **Vector database** construction  
-- **Retrieval pipelines** for resumes  
-- **Semantic search** for job matching  
+##  Learning Objectives
+- **Understand LangGraph agent design**: Build a state machine workflow for parsing job descriptions and matching resumes.
+- **Apply RAG (Retrieval-Augmented Generation)**: Use resume data to shortlist and rank candidates.
+- **Develop explainable AI features**: Provide reasoning, strengths/gaps, and improvement suggestions for candidates.
+- **Enable interactive refinement**: Allow users to adjust requirements mid‑conversation.
+- **Demonstrate advanced screening**: Multi‑round filtering with hire/no‑hire recommendations.
 
 ---
 
-## 🔹 Architecture
-1. **resume_rag.py**  
-   - Loads resumes from filesystem  
-   - Chunks intelligently (Education, Experience, Skills)  
-   - Generates embeddings via HuggingFace `sentence-transformers`  
-   - Stores in **ChromaDB** with normalized metadata (Name, Skills, ExperienceYears, Education)  
+##  Architecture
+The agent workflow is modeled as a **LangGraph state machine**:
 
-2. **job_matcher.py**  
-   - Accepts job description input  
-   - Converts JD to embedding  
-   - Retrieves top‑K resumes (K=10)  
-   - Implements **hybrid search** (semantic + keyword)  
-   - Scores matches (0–100) and provides reasoning  
+```mermaid
+stateDiagram-v2
+    [*] --> START
+    START --> ParseJD
+    ParseJD --> ExtractReqs
+    ExtractReqs --> SearchResumes
+    SearchResumes --> RankCandidates
+    RankCandidates --> GenerateReport
+    GenerateReport --> END
 
-3. **analysis.py**  
-   - Runs experimentation across 5 job descriptions  
-   - Measures **latency** and **retrieval accuracy (precision/recall)**  
-   - Prints summary metrics  
+    note right of ExtractReqs
+      Iterative refinement node
+      can update requirements mid-flow
+    end note
 
----
+    note right of RankCandidates
+      Explainability node
+      answers "Why did X rank higher than Y"
+    end note
 
-## 🔹 Output Format
-```json
-{
-  "job_description": "...",
-  "top_matches": [
-    {
-      "candidate_name": "Hemanth Kumar",
-      "resume_path": "resumes/hemanth_kumar.txt",
-      "match_score": 92,
-      "matched_skills": ["Python", "Machine Learning"],
-      "relevant_excerpts": ["..."],
-      "reasoning": "Strong match for ML experience..."
-    }
-  ]
-}
+    note right of GenerateReport
+      Multi-round screening node
+      layered filtering & hire/no-hire
+    end note
 ```
 
+Additional nodes:
+- **Comparison** → Head‑to‑head candidate analysis  
+- **Strengths & Gaps** → Highlight skills and missing areas  
+- **Improvement Suggestions** → Tailored advice for borderline candidates  
+
 ---
 
-## 🔹 Folder Structure
+## 📄 Output Format
+- **JSON reports** for candidate shortlists and rankings
+- **CLI text outputs** for explanations, comparisons, and suggestions
+- **PDF diagram** (`Mermaid Flow Flow-2026-08-15-135717.pdf`) for architecture visualization
+
+---
+
+## 📂 Folder Structure
 ```
 resume_rag_project/
 │
-├── resumes/                # 30+ diverse resume text files
-├── job_descriptions/        # 5+ job description text files
 ├── scripts/
-│   ├── resume_rag.py        # ingestion pipeline
-│   ├── job_matcher.py       # matching engine
-│   ├── analysis.py          # metrics & experimentation
-├── chroma_db/               # vector database storage
-└── README.md                # project documentation
+│   └── matching_agent.py        # Main agent implementation
+│
+├── chroma_db/                   # Resume embeddings (ignored in .gitignore)
+│
+├── Mermaid Flow Flow-2026-08-15-135717.pdf   # State machine diagram
+├── state_machine_diagram.md     # Mermaid source diagram
+├── resume_rag_project.mp4       # Demo video (5–6 minutes)
+├── requirements.txt             # Dependencies
+├── README.md                    # Project documentation
+└── .gitignore                   # Excluded files/folders
 ```
 
 ---
 
-## 🔹 Usage
-1. **Ingest resumes**  
+## ▶️ Usage
+1. Clone the repo:
    ```bash
-   python scripts/resume_rag.py
+   git clone https://github.com/Niha2048/resume_rag_project.git
+   cd resume_rag_project
+   ```
+2. Create virtual environment:
+   ```bash
+   python -m venv venv
+   venv\Scripts\activate   # Windows
+   ```
+3. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+4. Run the agent:
+   ```bash
+   python scripts/matching_agent.py
    ```
 
-2. **Run job matcher**  
-   ```bash
-   python scripts/job_matcher.py
-   ```
-
-3. **Run analysis (metrics)**  
-   ```bash
-   python scripts/analysis.py
-   ```
+### Example Queries
+- `Find me candidates with Java and 3+ years experience`
+- `Add AWS`
+- `Why did Erri_Teja_Kumar rank higher than Ashwini_Rao`
+- `Run multi-round screening`
+- `Compare Ashwini_Rao Erri_Teja_Kumar`
+- `Show strengths and gaps`
+- `Suggest improvements for candidates`
 
 ---
 
-## 🔹 Deliverables
-- ✅ Complete RAG implementation  
-- ✅ Dataset: 30+ resumes, 5+ job descriptions  
-- ✅ Scripts: ingestion, matching, analysis  
-- ✅ Performance metrics: latency, precision, recall  
-
+## 📦 Deliverables
+- ✅ LangGraph agent implementation (`matching_agent.py`)
+- ✅ State machine diagram (Mermaid + PDF)
+- ✅ CLI interface
 ---
 
-## 🔹 Future Enhancements
-- Add support for **REST API endpoints** for job matching  
-- Integrate **Pinecone/Weaviate** for scalable vector storage  
-- Expand **skill extraction** with NLP models for richer metadata  
-- Build a **web UI** for interactive job–resume matching  
+## 🔮 Future Enhancements
+- **Web UI**: Streamlit/Gradio interface for easier interaction
+- **Resume ingestion**: Upload and parse real resumes (PDF/DOCX)
+- **Advanced RAG search**: Semantic similarity with embeddings
+- **Interview question generation**: Automated screening questions per candidate
+- **Integration with ATS**: Connect to Applicant Tracking Systems for real‑world use
+
+---
 
